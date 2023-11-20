@@ -1,0 +1,48 @@
+exam.csv = 
+
+citation,size,inlibrary,price,editions,buy
+some,small,no,affordable,many,no
+many,big,no,expensive,one,yes
+some,big,always,expensie,few,no
+many,medium,no,expensive,many,yes
+many,samll,no,affordable,many,yes
+
+lab2.py = 
+
+1.import pandas as pd
+import numpy as np
+
+2.data = pd.read_csv('exam.csv')
+
+3.data
+
+4.concepts = np.array(data)[:,:-1]
+
+5.concepts
+
+6.target = np.array(data)[:,-1]
+
+7.target
+
+8.def train(con,tar):
+    for i,val in enumerate(tar):
+        if val=='yes':
+            specific_h = con[i].copy()
+            break
+            
+    for i,val in enumerate(con):
+        if tar[i]=='yes':
+             for x in range(len(specific_h)):
+                    if val[x] != specific_h[x]:
+                         specific_h[x] = '?'
+                    else:
+                          pass
+    return specific_h 
+
+9.print(train(concepts,target))
+
+
+
+
+
+
